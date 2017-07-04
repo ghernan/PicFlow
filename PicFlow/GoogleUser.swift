@@ -18,5 +18,9 @@ class GoogleUser: User {
         self.userName = profile.name
         self.imageURL = profile.imageURL(withDimension: 1080)
     }
+    
+    override init() {
+        super.init()
+    }
 
 }

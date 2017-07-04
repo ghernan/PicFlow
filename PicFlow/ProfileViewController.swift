@@ -20,9 +20,19 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var emailLabel: UILabel!
     
-    //Private properties
+    //MARK: - IBActions
     
+    @IBAction func logOut(_ sender: Any) {
+        
+        profile.logOut()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    //Private properties
+    private let profile = Profile.shared
     private let currentUser = Profile.shared.me
+    
     
     // MARK: - ViewController life cycle
     override func viewDidLoad() {

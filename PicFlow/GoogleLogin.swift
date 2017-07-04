@@ -9,7 +9,8 @@
 import GoogleSignIn
 
 class GoogleLogin: NSObject {
-
+    
+    //MARK: - Static properties
     static let shared = GoogleLogin()
     static let loginButton: GIDSignInButton = {
         let button = GIDSignInButton()
@@ -17,15 +18,31 @@ class GoogleLogin: NSObject {
         return button
     }()
     
+    //Public properties
+    public lazy var currentUser: GoogleUser = {
+        guard let googleProfile = GIDSignIn.sharedInstance().currentUser.profile else {
+            print("Not able to obtain profile") // TODO: handle an exception
+            return GoogleUser()
+        }
+        return GoogleUser(withProfile: googleProfile)
+    }()
     
+    
+    //MARK: - Life cycle
     private override init() {
     
     }
     
+    //MARK: - Public methods
+    public func logOut() {
+        GIDSignIn.sharedInstance().signOut()
+    }
+
     
     
 }
 
+//MARK: - GIDSignInDelegate
 extension GoogleLogin: GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {

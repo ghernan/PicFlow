@@ -25,6 +25,7 @@ class LogInViewController: UIViewController {
         prepareButtons()
         hasLoggedIn()
     }
+    
     // MARK: - Private functions
     private func prepareButtons() {
         

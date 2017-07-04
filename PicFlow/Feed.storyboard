@@ -53,7 +53,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vrd-uR-5zh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vY3-l4-gdS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vY3-l4-gdS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,6 +105,15 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKt-vi-Qao">
+                                <rect key="frame" x="159.5" y="550" width="55" height="30"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="0.52653175080000003" blue="0.19675722570000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="9QY-1n-DfJ" eventType="touchUpInside" id="EKU-SI-g0U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -114,10 +123,14 @@
                             <constraint firstItem="fZi-4I-zAV" firstAttribute="centerY" secondItem="vLT-kD-vrx" secondAttribute="centerY" id="HV9-Hb-Z03"/>
                             <constraint firstItem="frN-Ci-tio" firstAttribute="centerX" secondItem="vLT-kD-vrx" secondAttribute="centerX" id="IV7-hU-awy"/>
                             <constraint firstItem="7qa-h6-KKM" firstAttribute="centerX" secondItem="vLT-kD-vrx" secondAttribute="centerX" id="ImI-Gy-PYV"/>
+                            <constraint firstItem="kKt-vi-Qao" firstAttribute="centerX" secondItem="vLT-kD-vrx" secondAttribute="centerX" id="YVS-6e-TGt"/>
                             <constraint firstItem="xOP-Cp-V3W" firstAttribute="centerX" secondItem="vLT-kD-vrx" secondAttribute="centerX" id="hWs-Ng-pGb"/>
+                            <constraint firstItem="kKt-vi-Qao" firstAttribute="top" secondItem="frN-Ci-tio" secondAttribute="bottom" constant="38" id="qh2-MZ-5d1"/>
                             <constraint firstItem="fZi-4I-zAV" firstAttribute="top" secondItem="xOP-Cp-V3W" secondAttribute="bottom" constant="0.5" id="qml-iQ-0Zr"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailLabel" destination="frN-Ci-tio" id="yx5-OR-Pny"/>
                         <outlet property="nameLabel" destination="7qa-h6-KKM" id="Sw3-PV-LpK"/>

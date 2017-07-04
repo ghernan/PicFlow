@@ -32,12 +32,17 @@ class Profile {
             setUserProfile()
         }
     }
+    
     var me: User = User() {
+        
         didSet {
             
-            didLoggedIn!(true)
+            if let didLoggedIn = didLoggedIn?(true) {
+                didLoggedIn
+            }
         }
     }
+    
     var didLoggedIn: ((_ loggedIn: Bool) -> Void)?
     
     //MARK: - Life cycle
@@ -65,36 +70,26 @@ class Profile {
     
     private func getFacebookProfile() {
         
-        GraphRequest(graphPath: "me", parameters: ["fields":"email, first_name, last_name, picture.type(large)"]).start({ (response, result) in
-            
-            switch result {
-                
-            case .failed(let error):
-                print(error)
-            case .success(let profileResponse):
-                if let profileDictionary = profileResponse.dictionaryValue {
-                    
-                    self.me = Mapper<FBUser>().map(JSON: profileDictionary)!
-                    print(Profile.shared.me.email)
-                }
-            }
-        })
+        FBLogin.shared.setCurrentUser(success: { (user) in
+            self.me = user
+        }, error: { (error) in
+            print(error)
+        })        
     }
     
     private func getTwitterProfile() {
         
-        
-        
+        TwitterLogin.shared.setCurrentUser(success: { (user) in
+            self.me = user
+        }, error: { (error) in
+            print(error)
+        })
+
     }
     
     private func getGoogleProfile() {
         
-        guard let googleProfile = GIDSignIn.sharedInstance().currentUser.profile else {
-            print("Not able to obtain profile") // TODO: handle an exception
-            return
-        }
-        me = GoogleUser(withProfile: googleProfile)
-        print(Profile.shared.me.email)
+        me = GoogleLogin.shared.currentUser
     }
     
     //MARK - Public Methods
@@ -115,6 +110,23 @@ class Profile {
         }
         return false
     
+    }
+    
+    public func logOut() {
+        
+        switch type {
+        case .facebook:
+            FBLogin.shared.logOut()
+            break
+        case .google:
+            GoogleLogin.shared.logOut()
+            break
+        case .twitter:
+            TwitterLogin.shared.logOut()
+            break
+        default:
+            break
+        }
     }
     
     

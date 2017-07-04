@@ -11,7 +11,7 @@ import FacebookLogin
 import FacebookCore
 import ObjectMapper
 
-public class FBLogin {
+class FBLogin {
     
     // MARK: - Static properties
     static let shared = FBLogin()    
@@ -28,8 +28,35 @@ public class FBLogin {
         
     }
     
-}
+    //MARK: - Private methods
+    
 
+    
+    //MARK: - Public methods
+    public func logOut() {
+        let loginManager = LoginManager()
+        loginManager.logOut()
+    }
+    public func setCurrentUser(success: @escaping (FBUser) -> (), error: @escaping (Error) -> ()) {
+        
+        GraphRequest(graphPath: "me", parameters: ["fields":"email, first_name, last_name, picture.type(large)"]).start({ (response, result) in
+            
+            switch result {
+                
+            case .failed(let err):
+                print(err) // TODO: handle exception
+                error(err)
+            case .success(let profileResponse):
+                if let profileDictionary = profileResponse.dictionaryValue {
+                    
+                    success(Mapper<FBUser>().map(JSON: profileDictionary)!)
+                }
+            }
+        })
+    }
+    
+}
+//MARK: - LoginButtonDelegate
 extension FBLogin: LoginButtonDelegate {
     
     public func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
