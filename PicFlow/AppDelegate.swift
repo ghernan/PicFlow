@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import FacebookCore
+import TwitterKit
+import Google
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        Twitter.sharedInstance().start(withConsumerKey: "adN3SuopaNuRk4aABf3RCuKAP", consumerSecret: "cpFhPf2ewfuH3bYus8dRK65EgcaKgYruoKMxQBENqDsv2elFcr")
+        var configureError: NSError?
+        GGLContext.sharedInstance().configureWithError(&configureError)
+        assert(configureError == nil, "Error configuring Google services: \(configureError!)")
+        
+        if Profile.shared.loggedIn() {
+            self.window?.rootViewController = R.storyboard.feed.instantiateInitialViewController()
+        } else {
+            print("NOT LOGGED IN: \(Profile.shared.me.email)")
+            
+        }
+        
+        
+        
         return true
     }
 
@@ -39,6 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return  SDKApplicationDelegate.shared.application(app, open: url, options: options) || Twitter.sharedInstance().application(app, open: url, options: options) || GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
     }
 
 

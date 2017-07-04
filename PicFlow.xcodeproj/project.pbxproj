@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B5F1176B386BF78D3DA90B7 /* Pods_PicFlowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8CDED2C5158E5157C9812C /* Pods_PicFlowTests.framework */; };
+		7AEBFAD67A688D3A14FBDA43 /* Pods_PicFlow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F0FE18D61B290A2787A03D5 /* Pods_PicFlow.framework */; };
 		9C4B91F01F044E8B003BC488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B91EF1F044E8B003BC488 /* AppDelegate.swift */; };
-		9C4B91F21F044E8B003BC488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B91F11F044E8B003BC488 /* ViewController.swift */; };
+		9C4B91F21F044E8B003BC488 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B91F11F044E8B003BC488 /* LogInViewController.swift */; };
 		9C4B91F51F044E8B003BC488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4B91F31F044E8B003BC488 /* Main.storyboard */; };
 		9C4B91F71F044E8B003BC488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C4B91F61F044E8B003BC488 /* Assets.xcassets */; };
 		9C4B91FA1F044E8B003BC488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4B91F81F044E8B003BC488 /* LaunchScreen.storyboard */; };
 		9C4B92051F044E8B003BC488 /* PicFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92041F044E8B003BC488 /* PicFlowTests.swift */; };
 		9C4B92101F044E8B003BC488 /* PicFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B920F1F044E8B003BC488 /* PicFlowUITests.swift */; };
+		9C4B92201F0457EB003BC488 /* FBLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B921F1F0457EB003BC488 /* FBLogin.swift */; };
+		9C4B92271F08339A003BC488 /* TwitterLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92261F08339A003BC488 /* TwitterLogin.swift */; };
+		9C4B92291F0854D1003BC488 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C4B92281F0854D1003BC488 /* GoogleService-Info.plist */; };
+		9C4B922B1F087510003BC488 /* GoogleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B922A1F087510003BC488 /* GoogleLogin.swift */; };
+		9C4B922D1F09704F003BC488 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B922C1F09704F003BC488 /* User.swift */; };
+		9C4B92301F097B0E003BC488 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B922F1F097B0E003BC488 /* FBUser.swift */; };
+		9C4B92321F098381003BC488 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92311F098381003BC488 /* Profile.swift */; };
+		9C4B92381F09C0D5003BC488 /* URL+transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92371F09C0D5003BC488 /* URL+transform.swift */; };
+		9C4B923A1F0A2694003BC488 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4B92391F0A2694003BC488 /* Feed.storyboard */; };
+		9C4B923D1F0A9CF3003BC488 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B923C1F0A9CF3003BC488 /* R.generated.swift */; };
+		9C4B923F1F0AAFB0003BC488 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B923E1F0AAFB0003BC488 /* ProfileViewController.swift */; };
+		9C4B92421F0B410A003BC488 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92411F0B410A003BC488 /* ImageDownloader.swift */; };
+		9C4B92441F0B4172003BC488 /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92431F0B4172003BC488 /* GoogleUser.swift */; };
+		C718BF93BF787B3F854EE307 /* Pods_PicFlowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A178401670AF5E07A489F8B6 /* Pods_PicFlowUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03C7CACEDCFCB0A19720BB8C /* Pods-PicFlow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlow.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlow/Pods-PicFlow.release.xcconfig"; sourceTree = "<group>"; };
+		2F258922BC8AB719C7368283 /* Pods-PicFlowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlowUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlowUITests/Pods-PicFlowUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4E8CDED2C5158E5157C9812C /* Pods_PicFlowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicFlowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F0FE18D61B290A2787A03D5 /* Pods_PicFlow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicFlow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70A0EA6326F70B1BAFC6B03D /* Pods-PicFlow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlow/Pods-PicFlow.debug.xcconfig"; sourceTree = "<group>"; };
 		9C4B91EC1F044E8B003BC488 /* PicFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4B91EF1F044E8B003BC488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C4B91F11F044E8B003BC488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C4B91F11F044E8B003BC488 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		9C4B91F41F044E8B003BC488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C4B91F61F044E8B003BC488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C4B91F91F044E8B003BC488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +68,23 @@
 		9C4B920B1F044E8B003BC488 /* PicFlowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicFlowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4B920F1F044E8B003BC488 /* PicFlowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicFlowUITests.swift; sourceTree = "<group>"; };
 		9C4B92111F044E8B003BC488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C4B921F1F0457EB003BC488 /* FBLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBLogin.swift; sourceTree = "<group>"; };
+		9C4B92261F08339A003BC488 /* TwitterLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterLogin.swift; sourceTree = "<group>"; };
+		9C4B92281F0854D1003BC488 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9C4B922A1F087510003BC488 /* GoogleLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleLogin.swift; sourceTree = "<group>"; };
+		9C4B922C1F09704F003BC488 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9C4B922F1F097B0E003BC488 /* FBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
+		9C4B92311F098381003BC488 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		9C4B92371F09C0D5003BC488 /* URL+transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+transform.swift"; sourceTree = "<group>"; };
+		9C4B92391F0A2694003BC488 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		9C4B923C1F0A9CF3003BC488 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		9C4B923E1F0AAFB0003BC488 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9C4B92411F0B410A003BC488 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		9C4B92431F0B4172003BC488 /* GoogleUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUser.swift; sourceTree = "<group>"; };
+		A178401670AF5E07A489F8B6 /* Pods_PicFlowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicFlowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2037FCDAEF11DC3EAEE5F49 /* Pods-PicFlowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlowTests/Pods-PicFlowTests.release.xcconfig"; sourceTree = "<group>"; };
+		F9D9F726ECE772C540258154 /* Pods-PicFlowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlowUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlowUITests/Pods-PicFlowUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB2F0C6DB7C81297BD0FCCA6 /* Pods-PicFlowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlowTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlowTests/Pods-PicFlowTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AEBFAD67A688D3A14FBDA43 /* Pods_PicFlow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B5F1176B386BF78D3DA90B7 /* Pods_PicFlowTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +108,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C718BF93BF787B3F854EE307 /* Pods_PicFlowUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0485A2C4D45478E0D9B69916 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70A0EA6326F70B1BAFC6B03D /* Pods-PicFlow.debug.xcconfig */,
+				03C7CACEDCFCB0A19720BB8C /* Pods-PicFlow.release.xcconfig */,
+				FB2F0C6DB7C81297BD0FCCA6 /* Pods-PicFlowTests.debug.xcconfig */,
+				A2037FCDAEF11DC3EAEE5F49 /* Pods-PicFlowTests.release.xcconfig */,
+				F9D9F726ECE772C540258154 /* Pods-PicFlowUITests.debug.xcconfig */,
+				2F258922BC8AB719C7368283 /* Pods-PicFlowUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3BBBADB66DE97BBD3423C6CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F0FE18D61B290A2787A03D5 /* Pods_PicFlow.framework */,
+				4E8CDED2C5158E5157C9812C /* Pods_PicFlowTests.framework */,
+				A178401670AF5E07A489F8B6 /* Pods_PicFlowUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9C4B91E31F044E8B003BC488 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +145,8 @@
 				9C4B92031F044E8B003BC488 /* PicFlowTests */,
 				9C4B920E1F044E8B003BC488 /* PicFlowUITests */,
 				9C4B91ED1F044E8B003BC488 /* Products */,
+				0485A2C4D45478E0D9B69916 /* Pods */,
+				3BBBADB66DE97BBD3423C6CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +164,15 @@
 			isa = PBXGroup;
 			children = (
 				9C4B91EF1F044E8B003BC488 /* AppDelegate.swift */,
-				9C4B91F11F044E8B003BC488 /* ViewController.swift */,
-				9C4B91F31F044E8B003BC488 /* Main.storyboard */,
-				9C4B91F61F044E8B003BC488 /* Assets.xcassets */,
-				9C4B91F81F044E8B003BC488 /* LaunchScreen.storyboard */,
+				9C4B92281F0854D1003BC488 /* GoogleService-Info.plist */,
 				9C4B91FB1F044E8B003BC488 /* Info.plist */,
+				9C4B92401F0B3D5F003BC488 /* Helpers */,
+				9C4B92251F082858003BC488 /* Models */,
+				9C4B92231F07084F003BC488 /* Resources */,
+				9C4B921D1F045253003BC488 /* Services */,
+				9C4B921E1F04546C003BC488 /* Social */,
+				9C4B922E1F097361003BC488 /* Utils */,
+				9C4B92241F070877003BC488 /* Views */,
 			);
 			path = PicFlow;
 			sourceTree = "<group>";
@@ -125,6 +195,87 @@
 			path = PicFlowUITests;
 			sourceTree = "<group>";
 		};
+		9C4B921D1F045253003BC488 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9C4B921E1F04546C003BC488 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B921F1F0457EB003BC488 /* FBLogin.swift */,
+				9C4B92261F08339A003BC488 /* TwitterLogin.swift */,
+				9C4B922A1F087510003BC488 /* GoogleLogin.swift */,
+			);
+			name = Social;
+			sourceTree = "<group>";
+		};
+		9C4B92231F07084F003BC488 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B91F61F044E8B003BC488 /* Assets.xcassets */,
+				9C4B91F81F044E8B003BC488 /* LaunchScreen.storyboard */,
+				9C4B91F31F044E8B003BC488 /* Main.storyboard */,
+				9C4B92391F0A2694003BC488 /* Feed.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9C4B92241F070877003BC488 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B91F11F044E8B003BC488 /* LogInViewController.swift */,
+				9C4B923E1F0AAFB0003BC488 /* ProfileViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9C4B92251F082858003BC488 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B922C1F09704F003BC488 /* User.swift */,
+				9C4B922F1F097B0E003BC488 /* FBUser.swift */,
+				9C4B92431F0B4172003BC488 /* GoogleUser.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9C4B922E1F097361003BC488 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B92351F0996F8003BC488 /* Enums */,
+				9C4B92361F09C097003BC488 /* Extension */,
+				9C4B92311F098381003BC488 /* Profile.swift */,
+				9C4B923C1F0A9CF3003BC488 /* R.generated.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		9C4B92351F0996F8003BC488 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		9C4B92361F09C097003BC488 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B92371F09C0D5003BC488 /* URL+transform.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		9C4B92401F0B3D5F003BC488 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B92411F0B410A003BC488 /* ImageDownloader.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +283,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C4B92141F044E8B003BC488 /* Build configuration list for PBXNativeTarget "PicFlow" */;
 			buildPhases = (
+				5CCA0E8C5C5E7EE9C39C61DC /* [CP] Check Pods Manifest.lock */,
+				9C4B923B1F0A9BA3003BC488 /* ShellScript */,
 				9C4B91E81F044E8B003BC488 /* Sources */,
 				9C4B91E91F044E8B003BC488 /* Frameworks */,
 				9C4B91EA1F044E8B003BC488 /* Resources */,
+				F6AD444EEE68CB6267EE830C /* [CP] Embed Pods Frameworks */,
+				B93DB3D1FDE4E9EC634032B6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +304,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C4B92171F044E8B003BC488 /* Build configuration list for PBXNativeTarget "PicFlowTests" */;
 			buildPhases = (
+				19F5021FCBBA1B40DDC9D562 /* [CP] Check Pods Manifest.lock */,
 				9C4B91FC1F044E8B003BC488 /* Sources */,
 				9C4B91FD1F044E8B003BC488 /* Frameworks */,
 				9C4B91FE1F044E8B003BC488 /* Resources */,
+				BD508042ECFE4DF78BA9B8B2 /* [CP] Embed Pods Frameworks */,
+				BB624DA45E3E68D75150F366 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +325,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9C4B921A1F044E8B003BC488 /* Build configuration list for PBXNativeTarget "PicFlowUITests" */;
 			buildPhases = (
+				F5ADC0C141433AEA2766BFB5 /* [CP] Check Pods Manifest.lock */,
 				9C4B92071F044E8B003BC488 /* Sources */,
 				9C4B92081F044E8B003BC488 /* Frameworks */,
 				9C4B92091F044E8B003BC488 /* Resources */,
+				BA79DB487F9C541897DF638E /* [CP] Embed Pods Frameworks */,
+				14DDA667546B474B8C48B4D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,6 +397,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C4B91FA1F044E8B003BC488 /* LaunchScreen.storyboard in Resources */,
+				9C4B923A1F0A2694003BC488 /* Feed.storyboard in Resources */,
+				9C4B92291F0854D1003BC488 /* GoogleService-Info.plist in Resources */,
 				9C4B91F71F044E8B003BC488 /* Assets.xcassets in Resources */,
 				9C4B91F51F044E8B003BC488 /* Main.storyboard in Resources */,
 			);
@@ -257,12 +420,174 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		14DDA667546B474B8C48B4D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PicFlowUITests/Pods-PicFlowUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		19F5021FCBBA1B40DDC9D562 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5CCA0E8C5C5E7EE9C39C61DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9C4B923B1F0A9BA3003BC488 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+		};
+		B93DB3D1FDE4E9EC634032B6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PicFlow/Pods-PicFlow-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA79DB487F9C541897DF638E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PicFlowUITests/Pods-PicFlowUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB624DA45E3E68D75150F366 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PicFlowTests/Pods-PicFlowTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD508042ECFE4DF78BA9B8B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PicFlowTests/Pods-PicFlowTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5ADC0C141433AEA2766BFB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F6AD444EEE68CB6267EE830C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PicFlow/Pods-PicFlow-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9C4B91E81F044E8B003BC488 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C4B91F21F044E8B003BC488 /* ViewController.swift in Sources */,
+				9C4B91F21F044E8B003BC488 /* LogInViewController.swift in Sources */,
+				9C4B92321F098381003BC488 /* Profile.swift in Sources */,
+				9C4B922B1F087510003BC488 /* GoogleLogin.swift in Sources */,
+				9C4B92441F0B4172003BC488 /* GoogleUser.swift in Sources */,
+				9C4B922D1F09704F003BC488 /* User.swift in Sources */,
+				9C4B92271F08339A003BC488 /* TwitterLogin.swift in Sources */,
+				9C4B92381F09C0D5003BC488 /* URL+transform.swift in Sources */,
+				9C4B923F1F0AAFB0003BC488 /* ProfileViewController.swift in Sources */,
+				9C4B92201F0457EB003BC488 /* FBLogin.swift in Sources */,
+				9C4B923D1F0A9CF3003BC488 /* R.generated.swift in Sources */,
+				9C4B92301F097B0E003BC488 /* FBUser.swift in Sources */,
+				9C4B92421F0B410A003BC488 /* ImageDownloader.swift in Sources */,
 				9C4B91F01F044E8B003BC488 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +740,7 @@
 		};
 		9C4B92151F044E8B003BC488 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70A0EA6326F70B1BAFC6B03D /* Pods-PicFlow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H9SZPBU2NR;
@@ -428,6 +754,7 @@
 		};
 		9C4B92161F044E8B003BC488 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03C7CACEDCFCB0A19720BB8C /* Pods-PicFlow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H9SZPBU2NR;
@@ -441,6 +768,7 @@
 		};
 		9C4B92181F044E8B003BC488 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB2F0C6DB7C81297BD0FCCA6 /* Pods-PicFlowTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -456,6 +784,7 @@
 		};
 		9C4B92191F044E8B003BC488 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2037FCDAEF11DC3EAEE5F49 /* Pods-PicFlowTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +800,7 @@
 		};
 		9C4B921B1F044E8B003BC488 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9D9F726ECE772C540258154 /* Pods-PicFlowUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = H9SZPBU2NR;
@@ -485,6 +815,7 @@
 		};
 		9C4B921C1F044E8B003BC488 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F258922BC8AB719C7368283 /* Pods-PicFlowUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = H9SZPBU2NR;
@@ -516,6 +847,7 @@
 				9C4B92161F044E8B003BC488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C4B92171F044E8B003BC488 /* Build configuration list for PBXNativeTarget "PicFlowTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +856,7 @@
 				9C4B92191F044E8B003BC488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C4B921A1F044E8B003BC488 /* Build configuration list for PBXNativeTarget "PicFlowUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +865,7 @@
 				9C4B921C1F044E8B003BC488 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
