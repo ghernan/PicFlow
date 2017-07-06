@@ -45,7 +45,7 @@ class TwitterLogin {
                 return
             }
             twitterClient.requestEmail { email, err  in
-                guard let email = email else {
+                guard let _ = email else {
                     print("error: \(err!.localizedDescription)")
                     error(err!)
                     return

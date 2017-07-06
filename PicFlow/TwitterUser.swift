@@ -11,9 +11,12 @@ import TwitterCore
 
 class TwitterUser: User {
     
+    
+    
     init(withProfile profile: TWTRUser) {
         
         super.init()
+        
         self.firstName = profile.name
         self.lastName = ""
         self.userName = profile.screenName

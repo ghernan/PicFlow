@@ -7,6 +7,7 @@ import Foundation
 import Rswift
 import UIKit
 
+
 /// This `R` struct is generated and contains references to static resources.
 struct R: Rswift.Validatable {
   fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap(Locale.init) ?? Locale.current
@@ -50,10 +51,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 0 reuse identifiers.
-  struct reuseIdentifier {
-    fileprivate init() {}
-  }
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+
   
   /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {

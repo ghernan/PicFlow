@@ -12,6 +12,7 @@ class GoogleLogin: NSObject {
     
     //MARK: - Static properties
     static let shared = GoogleLogin()
+    
     static let loginButton: GIDSignInButton = {
         let button = GIDSignInButton()
         GIDSignIn.sharedInstance().delegate = shared

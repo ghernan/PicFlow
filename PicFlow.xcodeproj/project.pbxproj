@@ -30,6 +30,13 @@
 		9C4B92421F0B410A003BC488 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92411F0B410A003BC488 /* ImageDownloader.swift */; };
 		9C4B92441F0B4172003BC488 /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92431F0B4172003BC488 /* GoogleUser.swift */; };
 		9C4B92461F0B9289003BC488 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92451F0B9289003BC488 /* TwitterUser.swift */; };
+		9C4B92491F0C8E57003BC488 /* TweeterFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92481F0C8E57003BC488 /* TweeterFeedViewController.swift */; };
+		9C4B924B1F0D47E9003BC488 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B924A1F0D47E9003BC488 /* FeedViewController.swift */; };
+		9C4B924F1F0E0DDE003BC488 /* TweetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B924E1F0E0DDE003BC488 /* TweetViewCell.swift */; };
+		9C4B92511F0E8E1A003BC488 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92501F0E8E1A003BC488 /* PopUpViewController.swift */; };
+		9C4B92531F0E9F00003BC488 /* TwitterAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92521F0E9F00003BC488 /* TwitterAPIManager.swift */; };
+		9C4B92551F0EB11D003BC488 /* TwitterAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92541F0EB11D003BC488 /* TwitterAPIService.swift */; };
+		9C4B92571F0EB5E6003BC488 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92561F0EB5E6003BC488 /* Tweet.swift */; };
 		C718BF93BF787B3F854EE307 /* Pods_PicFlowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A178401670AF5E07A489F8B6 /* Pods_PicFlowUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +90,13 @@
 		9C4B92411F0B410A003BC488 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		9C4B92431F0B4172003BC488 /* GoogleUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUser.swift; sourceTree = "<group>"; };
 		9C4B92451F0B9289003BC488 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
+		9C4B92481F0C8E57003BC488 /* TweeterFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweeterFeedViewController.swift; sourceTree = "<group>"; };
+		9C4B924A1F0D47E9003BC488 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		9C4B924E1F0E0DDE003BC488 /* TweetViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewCell.swift; sourceTree = "<group>"; };
+		9C4B92501F0E8E1A003BC488 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		9C4B92521F0E9F00003BC488 /* TwitterAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPIManager.swift; sourceTree = "<group>"; };
+		9C4B92541F0EB11D003BC488 /* TwitterAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPIService.swift; sourceTree = "<group>"; };
+		9C4B92561F0EB5E6003BC488 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		A178401670AF5E07A489F8B6 /* Pods_PicFlowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicFlowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2037FCDAEF11DC3EAEE5F49 /* Pods-PicFlowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlowTests/Pods-PicFlowTests.release.xcconfig"; sourceTree = "<group>"; };
 		F9D9F726ECE772C540258154 /* Pods-PicFlowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlowUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlowUITests/Pods-PicFlowUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,14 +179,16 @@
 		9C4B91EE1F044E8B003BC488 /* PicFlow */ = {
 			isa = PBXGroup;
 			children = (
+				9C4B924C1F0E0D63003BC488 /* Components */,
 				9C4B91EF1F044E8B003BC488 /* AppDelegate.swift */,
 				9C4B92281F0854D1003BC488 /* GoogleService-Info.plist */,
-				9C4B91FB1F044E8B003BC488 /* Info.plist */,
 				9C4B92401F0B3D5F003BC488 /* Helpers */,
+				9C4B91FB1F044E8B003BC488 /* Info.plist */,
 				9C4B92251F082858003BC488 /* Models */,
 				9C4B92231F07084F003BC488 /* Resources */,
 				9C4B921D1F045253003BC488 /* Services */,
 				9C4B921E1F04546C003BC488 /* Social */,
+				9C4B92471F0C8BB9003BC488 /* TwitterAPI */,
 				9C4B922E1F097361003BC488 /* Utils */,
 				9C4B92241F070877003BC488 /* Views */,
 			);
@@ -230,6 +246,9 @@
 			children = (
 				9C4B91F11F044E8B003BC488 /* LogInViewController.swift */,
 				9C4B923E1F0AAFB0003BC488 /* ProfileViewController.swift */,
+				9C4B92481F0C8E57003BC488 /* TweeterFeedViewController.swift */,
+				9C4B924A1F0D47E9003BC488 /* FeedViewController.swift */,
+				9C4B92501F0E8E1A003BC488 /* PopUpViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -241,6 +260,7 @@
 				9C4B922F1F097B0E003BC488 /* FBUser.swift */,
 				9C4B92431F0B4172003BC488 /* GoogleUser.swift */,
 				9C4B92451F0B9289003BC488 /* TwitterUser.swift */,
+				9C4B92561F0EB5E6003BC488 /* Tweet.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -277,6 +297,31 @@
 				9C4B92411F0B410A003BC488 /* ImageDownloader.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9C4B92471F0C8BB9003BC488 /* TwitterAPI */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B92521F0E9F00003BC488 /* TwitterAPIManager.swift */,
+				9C4B92541F0EB11D003BC488 /* TwitterAPIService.swift */,
+			);
+			name = TwitterAPI;
+			sourceTree = "<group>";
+		};
+		9C4B924C1F0E0D63003BC488 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B924D1F0E0D7B003BC488 /* Cells */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		9C4B924D1F0E0D7B003BC488 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9C4B924E1F0E0DDE003BC488 /* TweetViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,7 +525,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+			shellScript = "#\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
 		};
 		B93DB3D1FDE4E9EC634032B6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -579,16 +624,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4B92551F0EB11D003BC488 /* TwitterAPIService.swift in Sources */,
+				9C4B92491F0C8E57003BC488 /* TweeterFeedViewController.swift in Sources */,
+				9C4B92531F0E9F00003BC488 /* TwitterAPIManager.swift in Sources */,
+				9C4B92571F0EB5E6003BC488 /* Tweet.swift in Sources */,
 				9C4B91F21F044E8B003BC488 /* LogInViewController.swift in Sources */,
 				9C4B92321F098381003BC488 /* Profile.swift in Sources */,
 				9C4B922B1F087510003BC488 /* GoogleLogin.swift in Sources */,
 				9C4B92441F0B4172003BC488 /* GoogleUser.swift in Sources */,
 				9C4B922D1F09704F003BC488 /* User.swift in Sources */,
+				9C4B924B1F0D47E9003BC488 /* FeedViewController.swift in Sources */,
+				9C4B92511F0E8E1A003BC488 /* PopUpViewController.swift in Sources */,
 				9C4B92271F08339A003BC488 /* TwitterLogin.swift in Sources */,
 				9C4B92381F09C0D5003BC488 /* URL+transform.swift in Sources */,
 				9C4B923F1F0AAFB0003BC488 /* ProfileViewController.swift in Sources */,
 				9C4B92201F0457EB003BC488 /* FBLogin.swift in Sources */,
 				9C4B923D1F0A9CF3003BC488 /* R.generated.swift in Sources */,
+				9C4B924F1F0E0DDE003BC488 /* TweetViewCell.swift in Sources */,
 				9C4B92461F0B9289003BC488 /* TwitterUser.swift in Sources */,
 				9C4B92301F097B0E003BC488 /* FBUser.swift in Sources */,
 				9C4B92421F0B410A003BC488 /* ImageDownloader.swift in Sources */,
