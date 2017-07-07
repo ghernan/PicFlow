@@ -34,7 +34,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vrd-uR-5zh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vY3-l4-gdS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vY3-l4-gdS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -352,8 +352,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="4ox-5H-IYz" id="FZI-r1-Lp0"/>
-                                    <outlet property="delegate" destination="4ox-5H-IYz" id="4Zk-0e-gCk"/>
+                                    <outlet property="dataSource" destination="5tI-6k-kmu" id="Mrb-8H-3Ut"/>
+                                    <outlet property="delegate" destination="5tI-6k-kmu" id="QEL-6X-LM6"/>
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4CM-62-fib">
@@ -393,6 +393,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableviewTimeline" destination="OmT-bP-FhO" id="1kR-3h-6xo"/>
                         <outlet property="userNameLabel" destination="kQM-vl-VPG" id="yQ1-hR-HnB"/>
                         <outlet property="userProfilePicture" destination="4CM-62-fib" id="pXc-le-ejl"/>
                         <outlet property="userScreenNameLabel" destination="FeY-iR-wGo" id="PQ2-Gx-28Z"/>

@@ -18,6 +18,9 @@ class UserTimelineViewController: UIViewController {
     
     @IBOutlet weak var userScreenNameLabel: UILabel!
     
+    @IBOutlet weak var tableviewTimeline: UITableView!
+    
+    
     //MARK: - Public properties
     
     var user: TwitterUser!
@@ -26,9 +29,10 @@ class UserTimelineViewController: UIViewController {
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewSetup()
         setUserProfile()
         loadUserTweets()
-        print(user)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,7 +46,8 @@ class UserTimelineViewController: UIViewController {
     //MARK: - Private methods
     
     private func setUserProfile() {
-        
+        userProfilePicture.layer.cornerRadius = userProfilePicture.frame.height/2
+        userProfilePicture.layer.masksToBounds = true
         userNameLabel.text = user.firstName
         userScreenNameLabel.text = user.userName
         ImageDownloader.getImage(fromURL: user.imageURL,
@@ -55,36 +60,47 @@ class UserTimelineViewController: UIViewController {
         
     }
     
-    private func loadUserTweets() {
+    private func tableViewSetup() {
         
-    }
-    @objc fileprivate func userImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        if let tweetIndex = tapGestureRecognizer.view?.tag {
-            let tweet = tweets[tweetIndex]
-            showUserTimeline(user: TwitterUser(withTweet: tweet))
+        tableviewTimeline.rowHeight = UITableViewAutomaticDimension
+        tableviewTimeline.estimatedRowHeight = 140
+        tableviewTimeline.tableFooterView = UIView()
+        
+        if( traitCollection.forceTouchCapability == .available){
+            
+            registerForPreviewing(with: self, sourceView: tableviewTimeline)
         }
     }
     
-    private func showUserTimeline(user: TwitterUser) {
-        performSegue(withIdentifier: "toUserTimeline", sender: user)
+    private func loadUserTweets() {
+        
+        TwitterAPIManager.getTweets(fromUser: user.userName,
+                                    success: { tweets in
+                                        self.tweets = tweets
+                                        print("timeline tweets = \(tweets.count)")
+                                        self.tableviewTimeline.reloadData()
+        },
+                                    error: { error in
+                                        print(error)
+                                        
+        })
     }
+    
 
 }
 //MARK: - UITableViewDatasource
 extension UserTimelineViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(tweets.count)
         return tweets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(userImageTapped(tapGestureRecognizer:)
-            ))
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell") as! TweetViewCell
         cell.configure(withTweet: tweets[indexPath.row])
-        cell.userImage.tag = indexPath.row
-        cell.userImage.addGestureRecognizer(tapGestureRecognizer)
+       
         return cell
     }
 }
@@ -94,6 +110,37 @@ extension UserTimelineViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+//MARK: - UIViewControllerPreviewingDelegate
+extension UserTimelineViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+        show(viewControllerToCommit, sender: self)
+        
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableviewTimeline?.indexPathForRow(at: location) else {
+            return nil
+        }
+        
+        let cell = tableviewTimeline.cellForRow(at: indexPath) as! TweetViewCell
+        
+        let detailVC = PopUpViewController()
+        
+        detailVC.image = cell.tweetImage.image
+        
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 300)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return detailVC
+        
+    }
+    
 }
 
 
