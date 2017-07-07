@@ -11,13 +11,14 @@ import TwitterKit
 class TwitterAPIService {
 
     private static let client = TWTRAPIClient()
-    private static let statusesShowEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
+    private static let tweetsEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
+    private static let userTimelineEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
     
     static func requestTweets(forMobileTechnology technology: String, success: @escaping (_ dictionary: [String : Any?]) -> (), error: @escaping (_ error: Error) -> ()) {
         
-        let params = ["q": "'\(technology)' filter:images", "count": "2"]
+        let params = ["q": "'\(technology)' filter:images", "count": "10"]
         var clientError: NSError?
-        let request = client.urlRequest(withMethod: "GET", url: statusesShowEndpoint, parameters: params, error: &clientError)
+        let request = client.urlRequest(withMethod: "GET", url: tweetsEndpoint, parameters: params, error: &clientError)
         
         client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
             if let connectionError = connectionError {
@@ -28,7 +29,7 @@ class TwitterAPIService {
             do {
                 let dictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! [String : Any?]
                 success(dictionary)
-               // print("json: \(dictionary)")
+                print("json: \(dictionary)")
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
                 error(jsonError)

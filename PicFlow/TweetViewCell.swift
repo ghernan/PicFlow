@@ -32,14 +32,20 @@ class TweetViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func configure(withTweet tweet: TWTRTweet) {
-        nameLabel.text = tweet.author.name
-        userNameLabel.text = tweet.author.screenName
+    func configure(withTweet tweet: Tweet) {
+        userImage.layer.masksToBounds = true
+        userImage.layer.cornerRadius = userImage.frame.height/2
+        nameLabel.text = tweet.name
+        userNameLabel.text = "@\(tweet.userScreenName)"
         tweetLabel.text = tweet.text
-        ImageDownloader.getImage(fromURL: URL(string: tweet.author.profileImageMiniURL)!, success: { image in
-            self.userImage.image = image
-            
-            }, error: { error in
+        ImageDownloader.getImage(fromURL: tweet.userImageURL, success: { profileImage in
+            self.userImage.image = profileImage
+            ImageDownloader.getImage(fromURL: tweet.mediaURL, success: { media in
+                self.tweetImage.image = media
+            }, error: { (error) in
+                print(error)
+            })
+        }, error: { error in
             print(error)
         })
     

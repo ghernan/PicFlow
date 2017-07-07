@@ -16,26 +16,30 @@ class TweeterFeedViewController: UIViewController {
     
     @IBOutlet weak var tweetTableView: UITableView!
     //MARK: - Properties
-    fileprivate var tweets: [TWTRTweet] = []
+    fileprivate var tweets: [Tweet] = []
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        tweetTableView.rowHeight = UITableViewAutomaticDimension
+        tweetTableView.estimatedRowHeight = 140
         TwitterAPIManager.getTweets(forMobileTechnology: "android", success: { tweets in
-            print(tweets[0].name)
-            print(tweets[0].userScreenName)
-            print(tweets[0].mediaURL)
-            print(tweets[0].relativeDate)
-            print(tweets[0].text)
-            print(tweets[0].userImageURL)
-            print(tweets[0].userID)
-            print(tweets[1].name)
-            print(tweets[1].userScreenName)
-            print(tweets[1].mediaURL)
-            print(tweets[1].relativeDate)
-            print(tweets[1].text)
-            print(tweets[1].userImageURL)
-            print(tweets[1].userID)
+//            print(tweets[0].name)
+//            print(tweets[0].userScreenName)
+//            print(tweets[0].mediaURL)
+//            print(tweets[0].relativeDate)
+//            print(tweets[0].text)
+//            print(tweets[0].userImageURL)
+//            print(tweets[0].userID)
+//            print(tweets[1].name)
+//            print(tweets[1].userScreenName)
+//            print(tweets[1].mediaURL)
+//            print(tweets[1].relativeDate)
+//            print(tweets[1].text)
+//            print(tweets[1].userImageURL)
+//            print(tweets[1].userID)
+            self.tweets = tweets            
+            self.tweetTableView.reloadData()
         }, error: { error in
         
         })
@@ -44,33 +48,28 @@ class TweeterFeedViewController: UIViewController {
             registerForPreviewing(with: self, sourceView: tweetTableView)
             
         }
-        let client = TWTRAPIClient()
-        let tweetIDs = ["20", "21", "22", "510908133917487104"]
         
-        tweetTableView.rowHeight = UITableViewAutomaticDimension
-        tweetTableView.estimatedRowHeight = 140
-        client.loadTweets(withIDs: tweetIDs) { (tweets, error) in
-            if let tweets = tweets {
-                self.tweets = tweets
-                
-                self.tweetTableView.reloadData()
-                
-            } else {
-                print(error!)
-            }
-        }
+        
+        
+//        let client = TWTRAPIClient()
+//        let tweetIDs = ["20", "21", "22", "510908133917487104"]
+//        client.loadTweets(withIDs: tweetIDs) { (tweets, error) in
+//            if let tweets = tweets {
+//                self.tweets = tweets
+//                
+//                self.tweetTableView.reloadData()
+//                
+//            } else {
+//                print(error!)
+//            }
+//        }
     }
 }
 
 //MARK: - UITableViewDelegate
 
 extension TweeterFeedViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        
-        return 100
-    }
+   
 
 }
 

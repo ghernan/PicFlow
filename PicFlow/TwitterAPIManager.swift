@@ -31,7 +31,7 @@ class TwitterAPIManager {
         guard let results = dictionary["statuses"] as? [[String : Any]] else {
             return []
         }
-        print(results)
+        
         let tweets = Mapper<Tweet>().mapArray(JSONArray: results)
         return tweets
     }

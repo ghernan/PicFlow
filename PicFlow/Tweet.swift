@@ -32,7 +32,7 @@ class Tweet: Mappable {
         userImageURL    <- (map["user.profile_image_url"], URL.transform)
         relativeDate    <- map["created_at"]
         text            <- map["text"]
-        mediaURL        <- (map["entities.media.media_url"], URL.transform)
+        mediaURL        <- (map["entities.media.0.media_url_https"], URL.transform)
         
         
     }
