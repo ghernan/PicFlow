@@ -24,8 +24,12 @@ class ProfileViewController: UIViewController {
     
     @IBAction func logOut(_ sender: Any) {
         
-        profile.logOut()
-        dismiss(animated: true, completion: nil)
+        present(R.storyboard.main.instantiateInitialViewController()!, animated: true, completion: {
+            self.profile.logOut()
+        })
+//        self.navigationController?.dismiss(animated: true, completion: {
+//            self.profile.logOut()
+//        })
     }
     
     
@@ -54,7 +58,7 @@ class ProfileViewController: UIViewController {
         userNameLabel.text = currentUser.userName
         nameLabel.text = "\(currentUser.firstName) \(currentUser.lastName)"
         emailLabel.text = currentUser.email
-        ImageDownloader.getImage(fromURL: currentUser.imageURL,
+        ImageDownload.getImage(fromURL: currentUser.imageURL,
                                  success: { image in
                                     
                                     self.profilePicture.image = image

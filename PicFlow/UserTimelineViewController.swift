@@ -53,7 +53,7 @@ class UserTimelineViewController: UIViewController {
         userProfilePicture.layer.masksToBounds = true
         userNameLabel.text = user.firstName
         userScreenNameLabel.text = user.userName
-        ImageDownloader.getImage(fromURL: user.imageURL,
+        ImageDownload.getImage(fromURL: user.imageURL,
                                  success: { image in
                                     self.userProfilePicture.image = image
         },

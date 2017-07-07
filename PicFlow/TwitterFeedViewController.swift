@@ -118,8 +118,9 @@ extension TwitterFeedViewController: UITableViewDataSource {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(userImageTapped(tapGestureRecognizer:)
             ))
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell") as! TweetViewCell
+        cell.userImage.tag = indexPath.row
         cell.configure(withTweet: tweets[indexPath.row])
-        cell.userImage.tag = indexPath.row        
+        
         cell.userImage.addGestureRecognizer(tapGestureRecognizer)
         return cell
     }

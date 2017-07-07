@@ -34,6 +34,7 @@ class TweetViewCell: UITableViewCell {
     }
     
     func configure(withTweet tweet: Tweet) {
+        
         self.selectionStyle = .none
         userImage.layer.masksToBounds = true
         userImage.layer.cornerRadius = userImage.frame.height/2
@@ -41,10 +42,19 @@ class TweetViewCell: UITableViewCell {
         userNameLabel.text = "@\(tweet.userScreenName)"
         tweetLabel.text = tweet.text
         timeLabel.text = tweet.relativeDate
-        ImageDownloader.getImage(fromURL: tweet.userImageURL, success: { profileImage in
-            self.userImage.image = profileImage
-            ImageDownloader.getImage(fromURL: tweet.mediaURL, success: { media in
-                self.tweetImage.image = media
+        
+        ImageDownload.getImage(fromURL: tweet.userImageURL, success: { profileImage in
+            
+            ImageDownload.getImage(fromURL: tweet.mediaURL, success: { media in
+                
+                DispatchQueue.main.async {
+                    
+                    self.userImage.image = profileImage
+                    self.tweetImage.image = media
+                    
+                }
+                
+                
             }, error: { (error) in
                 print(error)
             })

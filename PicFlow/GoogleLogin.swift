@@ -51,8 +51,7 @@ extension GoogleLogin: GIDSignInDelegate {
             print("\(error.localizedDescription)")
             return
         }
-        Profile.shared.type = .google
-       
+        Profile.shared.type = .google       
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
