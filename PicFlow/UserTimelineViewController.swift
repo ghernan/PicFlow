@@ -77,7 +77,7 @@ class UserTimelineViewController: UIViewController {
         TwitterAPIManager.getTweets(fromUser: user.userName,
                                     success: { tweets in
                                         self.tweets = tweets
-                                        print("timeline tweets = \(tweets.count)")
+                                        
                                         self.tableviewTimeline.reloadData()
         },
                                     error: { error in
@@ -92,7 +92,7 @@ class UserTimelineViewController: UIViewController {
 extension UserTimelineViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(tweets.count)
+        
         return tweets.count
     }
     
@@ -107,9 +107,7 @@ extension UserTimelineViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension UserTimelineViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+    
 }
 
 //MARK: - UIViewControllerPreviewingDelegate

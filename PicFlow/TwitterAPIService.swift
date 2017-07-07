@@ -14,9 +14,9 @@ class TwitterAPIService {
     private static let tweetsEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
     private static let userTimelineEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
     
-    static func requestTweets(forMobileTechnology technology: String, success: @escaping (_ dictionary: [String : Any?]) -> (), error: @escaping (_ error: Error) -> ()) {
+    static func requestTweets(forMobileTechnology technology: String, success: @escaping (_ dictionary: [String : Any]) -> (), error: @escaping (_ error: Error) -> ()) {
         
-        let params = ["q": "'\(technology)' filter:images", "count": "10"]
+        let params = ["q": "'\(technology)' filter:images", "count": "20"]
         var clientError: NSError?
         let request = client.urlRequest(withMethod: "GET", url: tweetsEndpoint, parameters: params, error: &clientError)
         
@@ -27,7 +27,7 @@ class TwitterAPIService {
             }
             
             do {
-                let dictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! [String : Any?]
+                let dictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! [String : Any]
                 success(dictionary)
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")
@@ -36,9 +36,9 @@ class TwitterAPIService {
         }        
     }
     
-    static func requestUserTimeline(withUserName username: String, success: @escaping (_ dictionaryArray: [[String : Any?]]) -> (), error: @escaping (_ error: Error) -> ()) {
+    static func requestUserTimeline(withUserName username: String, success: @escaping (_ dictionaryArray: [[String : Any]]) -> (), error: @escaping (_ error: Error) -> ()) {
         
-        let params = ["screen_name": "\(username)", "count": "10"]
+        let params = ["screen_name": "\(username)", "count": "20"]
         var clientError: NSError?
         let request = client.urlRequest(withMethod: "GET", url: userTimelineEndpoint, parameters: params, error: &clientError)
         
@@ -49,7 +49,7 @@ class TwitterAPIService {
             }
             
             do {
-                let dictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String : Any?]]
+                let dictionary = try JSONSerialization.jsonObject(with: data!, options: []) as! [[String : Any]]
                 success(dictionary)
             } catch let jsonError as NSError {
                 print("json error: \(jsonError.localizedDescription)")

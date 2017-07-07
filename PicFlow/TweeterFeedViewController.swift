@@ -18,6 +18,12 @@ class TweeterFeedViewController: UIViewController {
     //MARK: - Properties
     fileprivate var tweets: [Tweet] = []
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(showTweets), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -37,6 +43,7 @@ class TweeterFeedViewController: UIViewController {
     
     //MARK: - Private methods
     private func tableViewSetup() {
+        tweetTableView.addSubview(refreshControl)
         tweetTableView.rowHeight = UITableViewAutomaticDimension
         tweetTableView.estimatedRowHeight = 140
         tweetTableView.tableFooterView = UIView()
@@ -49,11 +56,12 @@ class TweeterFeedViewController: UIViewController {
     
     
     
-    private func showTweets() {
+    @objc private func showTweets() {
         TwitterAPIManager.getTweets(forMobileTechnology: "android", success: { tweets in
             
             self.tweets = tweets
             self.tweetTableView.reloadData()
+            self.refreshControl.endRefreshing()
         }, error: { error in
             print(error)
         })
@@ -77,10 +85,12 @@ class TweeterFeedViewController: UIViewController {
 
 extension TweeterFeedViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? TweetViewCell {
+            //cell.configure(withTweet: tweets[indexPath.row])
+        }
+        
     }
-   
 
 }
 
@@ -96,8 +106,8 @@ extension TweeterFeedViewController: UITableViewDataSource {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(userImageTapped(tapGestureRecognizer:)
             ))
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell") as! TweetViewCell
-        cell.configure(withTweet: tweets[indexPath.row])        
-        cell.userImage.tag = indexPath.row
+        cell.configure(withTweet: tweets[indexPath.row])
+        cell.userImage.tag = indexPath.row        
         cell.userImage.addGestureRecognizer(tapGestureRecognizer)
         return cell
     }

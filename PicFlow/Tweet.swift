@@ -16,7 +16,7 @@ class Tweet: Mappable {
     var userID = ""
     var text = ""
     var user = TwitterUser()
-    var mediaURL = URL(string: "https://cdn4.iconfinder.com/data/icons/virtual-keyboard/512/user-login-man-person-512.png")!
+    var mediaURL = URL(string: "https://nearsoft.com/wp-content/uploads/2015/08/14178214606_10289ec248_k.jpg")!
     var userImageURL = URL(string: "https://cdn4.iconfinder.com/data/icons/virtual-keyboard/512/user-login-man-person-512.png")!
     
     required init?(map: Map) {

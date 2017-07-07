@@ -38,7 +38,7 @@ class TwitterAPIManager {
         })    
     }
 
-    private static func parseTweets(fromDictionary dictionary: [String : Any?]) -> [Tweet] {
+    private static func parseTweets(fromDictionary dictionary: [String : Any]) -> [Tweet] {
         
         guard let results = dictionary["statuses"] as? [[String : Any]] else {
             return []
@@ -47,7 +47,7 @@ class TwitterAPIManager {
         return tweets
     }
     
-    private static func parseTimelineTweets(fromDictionary dictionaryArray: [[String : Any?]]) -> [Tweet] {
+    private static func parseTimelineTweets(fromDictionary dictionaryArray: [[String : Any]]) -> [Tweet] {
         
         let tweets = Mapper<Tweet>().mapArray(JSONArray: dictionaryArray)
         

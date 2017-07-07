@@ -31,7 +31,6 @@
 		9C4B92441F0B4172003BC488 /* GoogleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92431F0B4172003BC488 /* GoogleUser.swift */; };
 		9C4B92461F0B9289003BC488 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92451F0B9289003BC488 /* TwitterUser.swift */; };
 		9C4B92491F0C8E57003BC488 /* TweeterFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92481F0C8E57003BC488 /* TweeterFeedViewController.swift */; };
-		9C4B924B1F0D47E9003BC488 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B924A1F0D47E9003BC488 /* FeedViewController.swift */; };
 		9C4B924F1F0E0DDE003BC488 /* TweetViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B924E1F0E0DDE003BC488 /* TweetViewCell.swift */; };
 		9C4B92511F0E8E1A003BC488 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92501F0E8E1A003BC488 /* PopUpViewController.swift */; };
 		9C4B92531F0E9F00003BC488 /* TwitterAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92521F0E9F00003BC488 /* TwitterAPIManager.swift */; };
@@ -92,7 +91,6 @@
 		9C4B92431F0B4172003BC488 /* GoogleUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleUser.swift; sourceTree = "<group>"; };
 		9C4B92451F0B9289003BC488 /* TwitterUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 		9C4B92481F0C8E57003BC488 /* TweeterFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweeterFeedViewController.swift; sourceTree = "<group>"; };
-		9C4B924A1F0D47E9003BC488 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		9C4B924E1F0E0DDE003BC488 /* TweetViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewCell.swift; sourceTree = "<group>"; };
 		9C4B92501F0E8E1A003BC488 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		9C4B92521F0E9F00003BC488 /* TwitterAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterAPIManager.swift; sourceTree = "<group>"; };
@@ -249,7 +247,6 @@
 				9C4B91F11F044E8B003BC488 /* LogInViewController.swift */,
 				9C4B923E1F0AAFB0003BC488 /* ProfileViewController.swift */,
 				9C4B92481F0C8E57003BC488 /* TweeterFeedViewController.swift */,
-				9C4B924A1F0D47E9003BC488 /* FeedViewController.swift */,
 				9C4B92501F0E8E1A003BC488 /* PopUpViewController.swift */,
 				9C903AA71F0F1E42009DFB06 /* UserTimelineViewController.swift */,
 			);
@@ -637,7 +634,6 @@
 				9C4B92441F0B4172003BC488 /* GoogleUser.swift in Sources */,
 				9C903AA81F0F1E42009DFB06 /* UserTimelineViewController.swift in Sources */,
 				9C4B922D1F09704F003BC488 /* User.swift in Sources */,
-				9C4B924B1F0D47E9003BC488 /* FeedViewController.swift in Sources */,
 				9C4B92511F0E8E1A003BC488 /* PopUpViewController.swift in Sources */,
 				9C4B92271F08339A003BC488 /* TwitterLogin.swift in Sources */,
 				9C4B92381F09C0D5003BC488 /* URL+transform.swift in Sources */,

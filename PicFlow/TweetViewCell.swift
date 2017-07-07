@@ -34,6 +34,7 @@ class TweetViewCell: UITableViewCell {
     }
     
     func configure(withTweet tweet: Tweet) {
+        self.selectionStyle = .none
         userImage.layer.masksToBounds = true
         userImage.layer.cornerRadius = userImage.frame.height/2
         nameLabel.text = tweet.name

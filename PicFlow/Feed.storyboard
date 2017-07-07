@@ -34,7 +34,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vrd-uR-5zh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vY3-l4-gdS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vY3-l4-gdS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -263,7 +263,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="202" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OmT-bP-FhO">
                                 <rect key="frame" x="16" y="259" width="343" height="351"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.97305113769999996" green="1" blue="0.95279167499999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TweetCell" rowHeight="202" id="u71-G2-xf0" customClass="TweetViewCell" customModule="PicFlow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="202"/>
@@ -376,7 +376,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.97305113765315421" green="1" blue="0.9527916750289237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FeY-iR-wGo" firstAttribute="leading" secondItem="4CM-62-fib" secondAttribute="trailing" constant="8" id="4xy-d0-zH9"/>
                             <constraint firstItem="kQM-vl-VPG" firstAttribute="leading" secondItem="4CM-62-fib" secondAttribute="trailing" constant="8" id="67F-Ec-51v"/>
