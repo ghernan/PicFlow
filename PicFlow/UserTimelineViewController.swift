@@ -44,13 +44,7 @@ class UserTimelineViewController: UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let userTimelineViewController = segue.destination as? UserTimelineViewController {
-            userTimelineViewController.user =
-                sender as? TwitterUser
-        }
-    }
+    
     
     //MARK: - Private methods
     

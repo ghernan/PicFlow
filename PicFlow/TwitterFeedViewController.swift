@@ -9,14 +9,17 @@
 import TwitterKit
 import TwitterCore
 
-class TweeterFeedViewController: UIViewController {
+class TwitterFeedViewController: UIViewController {
     
     //MARK: - Constant properties
+    var technology: TechnologyType!
+    
+    @IBOutlet weak var tweetTableView: UITableView!   
     
     
-    @IBOutlet weak var tweetTableView: UITableView!
     //MARK: - Properties
     fileprivate var tweets: [Tweet] = []
+    
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -57,7 +60,7 @@ class TweeterFeedViewController: UIViewController {
     
     
     @objc private func showTweets() {
-        TwitterAPIManager.getTweets(forMobileTechnology: .ios, success: { tweets in
+        TwitterAPIManager.getTweets(forMobileTechnology: technology, success: { tweets in
             
             self.tweets = tweets
             self.tweetTableView.reloadData()
@@ -83,12 +86,12 @@ class TweeterFeedViewController: UIViewController {
 
 //MARK: - UITableViewDelegate
 
-extension TweeterFeedViewController: UITableViewDelegate {
+extension TwitterFeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == tweets.count-4 {
             let lastId = Int(tweets[tweets.count-1].id)!-1
-            TwitterAPIManager.getTweets(forMobileTechnology: .ios, getTweetsOn: .older, startingOnTweetID: "\(lastId)",
+            TwitterAPIManager.getTweets(forMobileTechnology: technology, getTweetsOn: .older, startingOnTweetID: "\(lastId)",
                 success: { tweets in
                     self.tweets.append(contentsOf: tweets)
                     self.tweetTableView.reloadData()
@@ -104,7 +107,7 @@ extension TweeterFeedViewController: UITableViewDelegate {
 
 //MARK: - UITableViewDataSource
 
-extension TweeterFeedViewController: UITableViewDataSource {
+extension TwitterFeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tweets.count
@@ -122,7 +125,7 @@ extension TweeterFeedViewController: UITableViewDataSource {
     
 }
 //MARK: - UIViewControllerPreviewingDelegate
-extension TweeterFeedViewController: UIViewControllerPreviewingDelegate {
+extension TwitterFeedViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         

@@ -26,12 +26,13 @@ class Tweet: Mappable {
     }
     
     func mapping(map: Map) {
+        
         id              <- map["id_str"]
         name            <- map["user.name"]
         userScreenName  <- map["user.screen_name"]
-        userID          <- map["user.id_str"]
-        relativeDate    <- map["created_at"]
+        userID          <- map["user.id_str"]        
         text            <- map["text"]
+        relativeDate    <- (map["created_at"], Date.relativeTime)
         userImageURL    <- (map["user.profile_image_url"], URL.transform)
         mediaURL        <- (map["entities.media.0.media_url_https"], URL.transform)       
     }

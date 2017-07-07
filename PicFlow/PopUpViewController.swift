@@ -19,7 +19,7 @@ class PopUpViewController: UIViewController {
             imageView.frame.size.height = 200.0
             imageView.frame.size.width = 300.0
             self.automaticallyAdjustsScrollViewInsets = false
-            imageView.center = view.center
+            imageView.center = CGPoint(x: view.center.x, y: view.center.y - 150)
             self.view.addSubview(imageView)
         }       
 

@@ -40,6 +40,7 @@ class TweetViewCell: UITableViewCell {
         nameLabel.text = tweet.name
         userNameLabel.text = "@\(tweet.userScreenName)"
         tweetLabel.text = tweet.text
+        timeLabel.text = tweet.relativeDate
         ImageDownloader.getImage(fromURL: tweet.userImageURL, success: { profileImage in
             self.userImage.image = profileImage
             ImageDownloader.getImage(fromURL: tweet.mediaURL, success: { media in
