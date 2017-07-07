@@ -24,7 +24,16 @@ class UserTimelineViewController: UIViewController {
     //MARK: - Public properties
     
     var user: TwitterUser!
-    var tweets: [Tweet] = []
+    
+    //MARK: - Private properties
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(loadUserTweets), for: UIControlEvents.valueChanged)
+        
+        return refreshControl
+    }()
+
+    fileprivate var tweets: [Tweet] = []
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -61,7 +70,7 @@ class UserTimelineViewController: UIViewController {
     }
     
     private func tableViewSetup() {
-        
+        tableviewTimeline.addSubview(refreshControl)
         tableviewTimeline.rowHeight = UITableViewAutomaticDimension
         tableviewTimeline.estimatedRowHeight = 140
         tableviewTimeline.tableFooterView = UIView()
@@ -72,13 +81,14 @@ class UserTimelineViewController: UIViewController {
         }
     }
     
-    private func loadUserTweets() {
+    @objc private func loadUserTweets() {
         
         TwitterAPIManager.getTweets(fromUser: user.userName,
                                     success: { tweets in
                                         self.tweets = tweets
                                         
                                         self.tableviewTimeline.reloadData()
+                                        self.refreshControl.endRefreshing()
         },
                                     error: { error in
                                         print(error)
@@ -107,6 +117,21 @@ extension UserTimelineViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension UserTimelineViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == tweets.count-4 {
+            let lastId = Int(tweets[tweets.count-1].id)!-1
+            TwitterAPIManager.getTweets(fromUser: user.userName, getTweetsOn: .older, startingOnTweetID: "\(lastId)",
+                success: { tweets in
+                    self.tweets.append(contentsOf: tweets)
+                    self.tableviewTimeline.reloadData()
+            },
+                error: {error in
+                    print(error)
+            })
+        }
+        
+    }
     
 }
 

@@ -10,6 +10,7 @@ import ObjectMapper
 
 class Tweet: Mappable {
     
+    var id = ""
     var name = ""
     var userScreenName = ""
     var relativeDate = ""
@@ -25,7 +26,7 @@ class Tweet: Mappable {
     }
     
     func mapping(map: Map) {
-        
+        id              <- map["id_str"]
         name            <- map["user.name"]
         userScreenName  <- map["user.screen_name"]
         userID          <- map["user.id_str"]

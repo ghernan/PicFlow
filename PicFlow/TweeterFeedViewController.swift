@@ -57,7 +57,7 @@ class TweeterFeedViewController: UIViewController {
     
     
     @objc private func showTweets() {
-        TwitterAPIManager.getTweets(forMobileTechnology: "android", success: { tweets in
+        TwitterAPIManager.getTweets(forMobileTechnology: .ios, success: { tweets in
             
             self.tweets = tweets
             self.tweetTableView.reloadData()
@@ -86,8 +86,16 @@ class TweeterFeedViewController: UIViewController {
 extension TweeterFeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cell = cell as? TweetViewCell {
-            //cell.configure(withTweet: tweets[indexPath.row])
+        if indexPath.row == tweets.count-4 {
+            let lastId = Int(tweets[tweets.count-1].id)!-1
+            TwitterAPIManager.getTweets(forMobileTechnology: .ios, getTweetsOn: .older, startingOnTweetID: "\(lastId)",
+                success: { tweets in
+                    self.tweets.append(contentsOf: tweets)
+                    self.tweetTableView.reloadData()
+            },
+                error: {error in
+                    print(error)
+            })
         }
         
     }

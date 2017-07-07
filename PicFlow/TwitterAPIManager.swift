@@ -11,9 +11,9 @@ import ObjectMapper
 
 class TwitterAPIManager {
     
-    //TODO: refactor to APIManager
-    static func getTweets(forMobileTechnology technology: String, success: @escaping (_ tweets: [Tweet]) -> (), error: @escaping (_ error: Error) -> ()) {
-            TwitterAPIService.requestTweets(forMobileTechnology: technology,
+    
+    static func getTweets(forMobileTechnology technology: TechnologyType, getTweetsOn time: TweetTimeType = .none, startingOnTweetID id: String = "", success: @escaping (_ tweets: [Tweet]) -> (), error: @escaping (_ error: Error) -> ()) {
+            TwitterAPIService.requestTweets(forMobileTechnology: technology, getTweetsOn: time, startingOnTweetID: id,
                                             success: { dictionary in
                                                 
                                                 success(parseTweets(fromDictionary: dictionary))
@@ -25,8 +25,8 @@ class TwitterAPIManager {
             })    
     }
 
-    static func getTweets(fromUser id: String, success: @escaping (_ tweets: [Tweet]) -> (), error: @escaping (_ error: Error) -> ()) {
-        TwitterAPIService.requestUserTimeline(withUserName: id,
+    static func getTweets(fromUser screenName: String, getTweetsOn time: TweetTimeType = .none, startingOnTweetID id: String = "", success: @escaping (_ tweets: [Tweet]) -> (), error: @escaping (_ error: Error) -> ()) {
+        TwitterAPIService.requestUserTimeline(withUserName: screenName, getTweetsOn: time, startingOnTweetID: id,
                                         success: { dictionary in
                                             
                                             success(parseTimelineTweets(fromDictionary: dictionary))

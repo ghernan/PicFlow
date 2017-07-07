@@ -10,17 +10,14 @@ import TwitterKit
 
 class TwitterAPIService {
 
-    private static let client = TWTRAPIClient()
-    private static let tweetsEndpoint = "https://api.twitter.com/1.1/search/tweets.json"
-    private static let userTimelineEndpoint = "https://api.twitter.com/1.1/statuses/user_timeline.json"
     
-    static func requestTweets(forMobileTechnology technology: String, success: @escaping (_ dictionary: [String : Any]) -> (), error: @escaping (_ error: Error) -> ()) {
+    static func requestTweets(forMobileTechnology technology: TechnologyType, getTweetsOn time: TweetTimeType = .none, startingOnTweetID id: String = "", success: @escaping (_ dictionary: [String : Any]) -> (), error: @escaping (_ error: Error) -> ()) {
         
-        let params = ["q": "'\(technology)' filter:images", "count": "20"]
-        var clientError: NSError?
-        let request = client.urlRequest(withMethod: "GET", url: tweetsEndpoint, parameters: params, error: &clientError)
+        guard let request = try? TwitterAPIRouter.getTweets(forTechnologyType: technology, getTweetsOn: time, startingOnTweetID: id).asURLRequest() else {
+            return
+        }
         
-        client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
+        TwitterAPI.client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
             if let connectionError = connectionError {
                 print("Error: \(connectionError)")
                 error(connectionError)
@@ -36,13 +33,13 @@ class TwitterAPIService {
         }        
     }
     
-    static func requestUserTimeline(withUserName username: String, success: @escaping (_ dictionaryArray: [[String : Any]]) -> (), error: @escaping (_ error: Error) -> ()) {
+    static func requestUserTimeline(withUserName username: String, getTweetsOn time: TweetTimeType = .none, startingOnTweetID id: String = "", success: @escaping (_ dictionaryArray: [[String : Any]]) -> (), error: @escaping (_ error: Error) -> ()) {
         
-        let params = ["screen_name": "\(username)", "count": "20"]
-        var clientError: NSError?
-        let request = client.urlRequest(withMethod: "GET", url: userTimelineEndpoint, parameters: params, error: &clientError)
+        guard let request = try? TwitterAPIRouter.getTimelineTweets(fromUser: username, getTweetsOn: time, startingOnTweetID: id).asURLRequest() else {
+            return
+        }
         
-        client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
+        TwitterAPI.client.sendTwitterRequest(request) { (response, data, connectionError) -> Void in
             if let connectionError = connectionError {
                 print("Error: \(connectionError)")
                 error(connectionError)
