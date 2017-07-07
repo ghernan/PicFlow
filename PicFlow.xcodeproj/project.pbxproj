@@ -12,7 +12,6 @@
 		9C4B91F01F044E8B003BC488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B91EF1F044E8B003BC488 /* AppDelegate.swift */; };
 		9C4B91F21F044E8B003BC488 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B91F11F044E8B003BC488 /* LogInViewController.swift */; };
 		9C4B91F51F044E8B003BC488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4B91F31F044E8B003BC488 /* Main.storyboard */; };
-		9C4B91F71F044E8B003BC488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C4B91F61F044E8B003BC488 /* Assets.xcassets */; };
 		9C4B91FA1F044E8B003BC488 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4B91F81F044E8B003BC488 /* LaunchScreen.storyboard */; };
 		9C4B92051F044E8B003BC488 /* PicFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B92041F044E8B003BC488 /* PicFlowTests.swift */; };
 		9C4B92101F044E8B003BC488 /* PicFlowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4B920F1F044E8B003BC488 /* PicFlowUITests.swift */; };
@@ -43,6 +42,7 @@
 		9C903AB41F0F8DD3009DFB06 /* TweetTimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C903AB31F0F8DD3009DFB06 /* TweetTimeType.swift */; };
 		9C903AB61F0FA975009DFB06 /* Date+relativeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C903AB51F0FA975009DFB06 /* Date+relativeTime.swift */; };
 		9C903AB81F0FC051009DFB06 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C903AB71F0FC051009DFB06 /* TabBarController.swift */; };
+		9C903ABA1F0FCFC4009DFB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C903AB91F0FCFC4009DFB06 /* Assets.xcassets */; };
 		C718BF93BF787B3F854EE307 /* Pods_PicFlowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A178401670AF5E07A489F8B6 /* Pods_PicFlowUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +73,6 @@
 		9C4B91EF1F044E8B003BC488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C4B91F11F044E8B003BC488 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		9C4B91F41F044E8B003BC488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9C4B91F61F044E8B003BC488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C4B91F91F044E8B003BC488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C4B91FB1F044E8B003BC488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C4B92001F044E8B003BC488 /* PicFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +108,7 @@
 		9C903AB31F0F8DD3009DFB06 /* TweetTimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTimeType.swift; sourceTree = "<group>"; };
 		9C903AB51F0FA975009DFB06 /* Date+relativeTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+relativeTime.swift"; sourceTree = "<group>"; };
 		9C903AB71F0FC051009DFB06 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9C903AB91F0FCFC4009DFB06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A178401670AF5E07A489F8B6 /* Pods_PicFlowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicFlowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2037FCDAEF11DC3EAEE5F49 /* Pods-PicFlowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlowTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlowTests/Pods-PicFlowTests.release.xcconfig"; sourceTree = "<group>"; };
 		F9D9F726ECE772C540258154 /* Pods-PicFlowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicFlowUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PicFlowUITests/Pods-PicFlowUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 		9C4B92231F07084F003BC488 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9C4B91F61F044E8B003BC488 /* Assets.xcassets */,
+				9C903AB91F0FCFC4009DFB06 /* Assets.xcassets */,
 				9C4B91F81F044E8B003BC488 /* LaunchScreen.storyboard */,
 				9C4B91F31F044E8B003BC488 /* Main.storyboard */,
 				9C4B92391F0A2694003BC488 /* Feed.storyboard */,
@@ -481,8 +481,8 @@
 				9C4B91FA1F044E8B003BC488 /* LaunchScreen.storyboard in Resources */,
 				9C4B923A1F0A2694003BC488 /* Feed.storyboard in Resources */,
 				9C4B92291F0854D1003BC488 /* GoogleService-Info.plist in Resources */,
-				9C4B91F71F044E8B003BC488 /* Assets.xcassets in Resources */,
 				9C4B91F51F044E8B003BC488 /* Main.storyboard in Resources */,
+				9C903ABA1F0FCFC4009DFB06 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

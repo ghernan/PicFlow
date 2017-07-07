@@ -32,6 +32,7 @@ class TwitterFeedViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        
         tableViewSetup()
         showTweets()
         

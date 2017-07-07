@@ -6,7 +6,7 @@
 //  Copyright © 2017 Antonio  Hernandez . All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum TechnologyType: Int {
     
@@ -23,6 +23,17 @@ enum TechnologyType: Int {
             return "#iOS"
         case .windows:
             return "#Windows"
+        }
+    }
+    
+    func getLogo() -> UIImage {
+        switch  self {
+        case .android:
+            return UIImage(named: "android")!
+        case .ios:
+            return UIImage(named: "apple")!
+        case .windows:
+            return UIImage(named: "windows")!
         }
     }
     

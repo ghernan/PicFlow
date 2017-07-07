@@ -10,25 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--#Windows-->
-        <scene sceneID="6RR-mm-ryQ">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NvO-0v-Tgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="EgH-BA-RM9" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZaJ-Fr-4vI"/>
-                        <viewControllerLayoutGuide type="bottom" id="h5u-dD-UEL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pSy-de-7kR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="#Windows" id="foT-Dq-0YJ"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="1628" y="858"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GxK-X5-Dvh">
             <objects>
@@ -121,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmk-W4-Cks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.60000000000002" y="-507.79610194902551"/>
+            <point key="canvasLocation" x="1670" y="-505"/>
         </scene>
         <!--#iOS-->
         <scene sceneID="9aF-Wv-RL0">
@@ -239,7 +220,7 @@
                             <constraint firstItem="vcB-SL-pIL" firstAttribute="top" secondItem="rOF-3G-ddT" secondAttribute="bottom" constant="38" id="t8x-lt-Zc3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="#iOS" id="jEw-CW-Zfx"/>
+                    <tabBarItem key="tabBarItem" title="#iOS" selectedImage="apple" id="jEw-CW-Zfx"/>
                     <connections>
                         <outlet property="tweetTableView" destination="vcB-SL-pIL" id="hDQ-tZ-VuE"/>
                         <segue destination="5tI-6k-kmu" kind="show" identifier="toUserTimeline" id="beq-eg-PH4"/>
@@ -422,7 +403,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="4ox-5H-IYz" kind="relationship" relationship="viewControllers" id="xyg-QY-AZc"/>
-                        <segue destination="EgH-BA-RM9" kind="relationship" relationship="viewControllers" id="LKv-Mb-5wh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U07-ya-gHc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -431,6 +411,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apple" width="40" height="40"/>
         <image name="twitter" width="1687" height="1687"/>
     </resources>
+    <color key="tintColor" red="0.30133617000000001" green="0.6665414395" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

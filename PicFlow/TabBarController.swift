@@ -24,7 +24,12 @@ class TabBarController: UITabBarController {
     
     private func setUpViewControllers() {
         self.viewControllers?.forEach {
-            $0.title = ($0 as! TwitterFeedViewController).technology.getHashTag()
+            
+            let technology = ($0 as! TwitterFeedViewController).technology
+            let icon = UITabBarItem(title: technology?.getHashTag(), image: technology?.getLogo(), selectedImage: technology?.getLogo())
+            $0.title = technology?.getHashTag()
+            $0.tabBarItem = icon
+            
         }
     }
 
