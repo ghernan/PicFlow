@@ -24,10 +24,11 @@ class TweetViewCell: UITableViewCell {
     
     @IBOutlet weak var tweetImage: UIImageView!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        nameLabel.sizeToFit()
-        timeLabel.sizeToFit()
+        
         
         // Initialization code
     }

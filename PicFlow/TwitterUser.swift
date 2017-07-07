@@ -27,6 +27,12 @@ class TwitterUser: User {
         super.init()
     }
     
-    
+    init(withTweet tweet: Tweet) {
+        super.init()
+        self.firstName = tweet.name
+        self.lastName = ""
+        self.userName = tweet.userScreenName
+        self.imageURL = tweet.userImageURL
+    }
     
 }

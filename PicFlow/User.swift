@@ -11,10 +11,10 @@ import ObjectMapper
 class User {
     
     //MARK: - Properties
-    var email: String = "jdoe@mail.com"
-    var userName: String = "JDoe"
-    var firstName: String = "John"
-    var lastName: String = "Doe"
+    var email: String = ""
+    var userName: String = ""
+    var firstName: String = ""
+    var lastName: String = "s"
     var imageURL: URL = URL(string: "https://cdn4.iconfinder.com/data/icons/virtual-keyboard/512/user-login-man-person-512.png")!
     
 }

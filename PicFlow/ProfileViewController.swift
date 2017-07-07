@@ -48,6 +48,7 @@ class ProfileViewController: UIViewController {
         profilePicture.layer.borderColor = UIColor.orange.cgColor
         profilePicture.layer.cornerRadius = profilePicture.frame.height/2
     }
+    
     private func setUIWithCurrentUser() {
         
         userNameLabel.text = currentUser.userName

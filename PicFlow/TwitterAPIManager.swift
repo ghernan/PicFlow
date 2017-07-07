@@ -22,8 +22,7 @@ class TwitterAPIManager {
                                             error: {serviceError in
                                                 error(serviceError)
             
-            })
-    
+            })    
     }
     
     private static func parseTweets(fromDictionary dictionary: [String : Any?]) -> [Tweet] {
@@ -31,7 +30,6 @@ class TwitterAPIManager {
         guard let results = dictionary["statuses"] as? [[String : Any]] else {
             return []
         }
-        
         let tweets = Mapper<Tweet>().mapArray(JSONArray: results)
         return tweets
     }

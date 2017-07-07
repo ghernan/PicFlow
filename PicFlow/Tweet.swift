@@ -14,10 +14,10 @@ class Tweet: Mappable {
     var userScreenName = ""
     var relativeDate = ""
     var userID = ""
-    var userImageURL = URL(string: "https://cdn4.iconfinder.com/data/icons/virtual-keyboard/512/user-login-man-person-512.png")!
     var text = ""
     var user = TwitterUser()
     var mediaURL = URL(string: "https://cdn4.iconfinder.com/data/icons/virtual-keyboard/512/user-login-man-person-512.png")!
+    var userImageURL = URL(string: "https://cdn4.iconfinder.com/data/icons/virtual-keyboard/512/user-login-man-person-512.png")!
     
     required init?(map: Map) {
         
@@ -29,12 +29,10 @@ class Tweet: Mappable {
         name            <- map["user.name"]
         userScreenName  <- map["user.screen_name"]
         userID          <- map["user.id_str"]
-        userImageURL    <- (map["user.profile_image_url"], URL.transform)
         relativeDate    <- map["created_at"]
         text            <- map["text"]
-        mediaURL        <- (map["entities.media.0.media_url_https"], URL.transform)
-        
-        
+        userImageURL    <- (map["user.profile_image_url"], URL.transform)
+        mediaURL        <- (map["entities.media.0.media_url_https"], URL.transform)       
     }
     
 

@@ -18,57 +18,68 @@ class TweeterFeedViewController: UIViewController {
     //MARK: - Properties
     fileprivate var tweets: [Tweet] = []
     
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        tableViewSetup()
+        showTweets()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let userTimelineViewController = segue.destination as? UserTimelineViewController {
+            userTimelineViewController.user =
+            sender as? TwitterUser
+        }
+    }
+    
+    //MARK: - Private methods
+    private func tableViewSetup() {
         tweetTableView.rowHeight = UITableViewAutomaticDimension
         tweetTableView.estimatedRowHeight = 140
+        tweetTableView.tableFooterView = UIView()
+        
+        if( traitCollection.forceTouchCapability == .available){
+            
+            registerForPreviewing(with: self, sourceView: tweetTableView)           
+        }
+    }
+    
+    
+    
+    private func showTweets() {
         TwitterAPIManager.getTweets(forMobileTechnology: "android", success: { tweets in
-//            print(tweets[0].name)
-//            print(tweets[0].userScreenName)
-//            print(tweets[0].mediaURL)
-//            print(tweets[0].relativeDate)
-//            print(tweets[0].text)
-//            print(tweets[0].userImageURL)
-//            print(tweets[0].userID)
-//            print(tweets[1].name)
-//            print(tweets[1].userScreenName)
-//            print(tweets[1].mediaURL)
-//            print(tweets[1].relativeDate)
-//            print(tweets[1].text)
-//            print(tweets[1].userImageURL)
-//            print(tweets[1].userID)
-            self.tweets = tweets            
+            
+            self.tweets = tweets
             self.tweetTableView.reloadData()
         }, error: { error in
-        
+            print(error)
         })
-        if( traitCollection.forceTouchCapability == .available){
-            print("AVAILABLE")
-            registerForPreviewing(with: self, sourceView: tweetTableView)
-            
+    }
+    
+    @objc fileprivate func userImageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        if let tweetIndex = tapGestureRecognizer.view?.tag {
+            let tweet = tweets[tweetIndex]
+            showUserTimeline(user: TwitterUser(withTweet: tweet))
         }
-        
-        
-        
-//        let client = TWTRAPIClient()
-//        let tweetIDs = ["20", "21", "22", "510908133917487104"]
-//        client.loadTweets(withIDs: tweetIDs) { (tweets, error) in
-//            if let tweets = tweets {
-//                self.tweets = tweets
-//                
-//                self.tweetTableView.reloadData()
-//                
-//            } else {
-//                print(error!)
-//            }
-//        }
+    }
+    
+    private func showUserTimeline(user: TwitterUser) {
+        performSegue(withIdentifier: "toUserTimeline", sender: user)
     }
 }
+
+
 
 //MARK: - UITableViewDelegate
 
 extension TweeterFeedViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
    
 
 }
@@ -82,16 +93,17 @@ extension TweeterFeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(userImageTapped(tapGestureRecognizer:)
+            ))
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell") as! TweetViewCell
-        cell.configure(withTweet: tweets[indexPath.row])
-        cell.isUserInteractionEnabled = true
-        cell.tweetImage.isUserInteractionEnabled = true
-        cell.userImage.isUserInteractionEnabled = true
+        cell.configure(withTweet: tweets[indexPath.row])        
+        cell.userImage.tag = indexPath.row
+        cell.userImage.addGestureRecognizer(tapGestureRecognizer)
         return cell
     }
     
 }
-
+//MARK: - UIViewControllerPreviewingDelegate
 extension TweeterFeedViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
@@ -109,7 +121,6 @@ extension TweeterFeedViewController: UIViewControllerPreviewingDelegate {
         let cell = tweetTableView.cellForRow(at: indexPath) as! TweetViewCell
         
         let detailVC = PopUpViewController()
-        
         
         detailVC.image = cell.tweetImage.image
         
