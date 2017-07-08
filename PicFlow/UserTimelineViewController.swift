@@ -25,6 +25,7 @@ class UserTimelineViewController: UIViewController {
     
     var user: TwitterUser!
     
+    
     //MARK: - Private properties
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -32,6 +33,8 @@ class UserTimelineViewController: UIViewController {
         
         return refreshControl
     }()
+    private var longPressGestureRecognizer: UILongPressGestureRecognizer!
+    private var isForceTouchAble = true
 
     fileprivate var tweets: [Tweet] = []
     
@@ -102,7 +105,7 @@ extension UserTimelineViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell") as! TweetViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: TweetViewCell.reusableIdentifier) as! TweetViewCell
         cell.configure(withTweet: tweets[indexPath.row])
        
         return cell
@@ -114,8 +117,14 @@ extension UserTimelineViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         if indexPath.row == tweets.count-4 {
-            let lastId = Int(tweets[tweets.count-1].id)!-1
-            TwitterAPIManager.getTweets(fromUser: user.userName, getTweetsOn: .older, startingOnTweetID: "\(lastId)",
+            guard let lastId = tweets.last?.id else {
+                return
+            }
+            guard let cursorId = Int64(lastId) else {
+                return
+            }
+            let maxId = cursorId - 1
+            TwitterAPIManager.getTweets(fromUser: user.userName, getTweetsOn: .older, startingOnTweetID: "\(maxId)",
                 success: { tweets in
                     self.tweets.append(contentsOf: tweets)
                     self.tableviewTimeline.reloadData()

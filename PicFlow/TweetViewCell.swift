@@ -33,6 +33,10 @@ class TweetViewCell: UITableViewCell {
         // Initialization code
     }
     
+    public static var reusableIdentifier: String{
+        return String(describing: self)
+    }
+    
     func configure(withTweet tweet: Tweet) {
         
         self.selectionStyle = .none

@@ -7,7 +7,6 @@ import Foundation
 import Rswift
 import UIKit
 
-
 /// This `R` struct is generated and contains references to static resources.
 struct R: Rswift.Validatable {
   fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap(Locale.init) ?? Locale.current
@@ -41,8 +40,37 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 0 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
+    /// Image `android`.
+    static let android = Rswift.ImageResource(bundle: R.hostingBundle, name: "android")
+    /// Image `apple`.
+    static let apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "apple")
+    /// Image `twitter`.
+    static let twitter = Rswift.ImageResource(bundle: R.hostingBundle, name: "twitter")
+    /// Image `windows`.
+    static let windows = Rswift.ImageResource(bundle: R.hostingBundle, name: "windows")
+    
+    /// `UIImage(named: "android", bundle: ..., traitCollection: ...)`
+    static func android(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.android, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "apple", bundle: ..., traitCollection: ...)`
+    static func apple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.apple, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "twitter", bundle: ..., traitCollection: ...)`
+    static func twitter(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.twitter, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "windows", bundle: ..., traitCollection: ...)`
+    static func windows(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.windows, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
@@ -52,9 +80,14 @@ struct R: Rswift.Validatable {
   }
   
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
-
+  struct reuseIdentifier {
+    /// Reuse identifier `TweetViewCell`.
+    static let tweetViewCell: Rswift.ReuseIdentifier<TweetViewCell> = Rswift.ReuseIdentifier(identifier: "TweetViewCell")
+    
+    fileprivate init() {}
+  }
   
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 3 view controllers.
   struct segue {
     /// This struct is generated for `LogInViewController`, and contains static references to 1 segues.
     struct logInViewController {
@@ -66,6 +99,36 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func toFeed(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, LogInViewController, UIKit.UINavigationController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.logInViewController.toFeed, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `TabBarController`, and contains static references to 1 segues.
+    struct tabBarController {
+      /// Segue identifier `toProfile`.
+      static let toProfile: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, TabBarController, ProfileViewController> = Rswift.StoryboardSegueIdentifier(identifier: "toProfile")
+      
+      /// Optionally returns a typed version of segue `toProfile`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func toProfile(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, TabBarController, ProfileViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.tabBarController.toProfile, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    /// This struct is generated for `TwitterFeedViewController`, and contains static references to 1 segues.
+    struct twitterFeedViewController {
+      /// Segue identifier `toUserTimeline`.
+      static let toUserTimeline: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, TwitterFeedViewController, UserTimelineViewController> = Rswift.StoryboardSegueIdentifier(identifier: "toUserTimeline")
+      
+      /// Optionally returns a typed version of segue `toUserTimeline`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func toUserTimeline(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, TwitterFeedViewController, UserTimelineViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.twitterFeedViewController.toUserTimeline, segue: segue)
       }
       
       fileprivate init() {}
@@ -108,7 +171,7 @@ struct R: Rswift.Validatable {
   
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
-      // There are no resources to validate
+      try _R.validate()
     }
     
     fileprivate init() {}
@@ -119,17 +182,36 @@ struct R: Rswift.Validatable {
   fileprivate init() {}
 }
 
-struct _R {
+struct _R: Rswift.Validatable {
+  static func validate() throws {
+    try storyboard.validate()
+  }
+  
   struct nib {
     fileprivate init() {}
   }
   
-  struct storyboard {
-    struct feed: Rswift.StoryboardResourceWithInitialControllerType {
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      try feed.validate()
+    }
+    
+    struct feed: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
+      let feedController = StoryboardViewControllerResource<TwitterFeedViewController>(identifier: "feedController")
       let name = "Feed"
+      
+      func feedController(_: Void = ()) -> TwitterFeedViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: feedController)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "apple") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'apple' is used in storyboard 'Feed', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "twitter") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'twitter' is used in storyboard 'Feed', but couldn't be loaded.") }
+        if _R.storyboard.feed().feedController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'feedController' could not be loaded from storyboard 'Feed' as 'TwitterFeedViewController'.") }
+      }
       
       fileprivate init() {}
     }

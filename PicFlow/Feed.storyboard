@@ -120,7 +120,7 @@
                                 <rect key="frame" x="16" y="102" width="343" height="508"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TweetCell" rowHeight="202" id="444-yS-nL3" customClass="TweetViewCell" customModule="PicFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TweetViewCell" rowHeight="202" id="444-yS-nL3" customClass="TweetViewCell" customModule="PicFlow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="202"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="444-yS-nL3" id="3VT-nm-5KL">
@@ -152,9 +152,12 @@
                                                         <constraint firstAttribute="height" constant="36" id="rgu-Dy-zHp"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfJ-kF-Qkk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfJ-kF-Qkk">
                                                     <rect key="frame" x="52" y="27" width="283" height="16"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.72869861560000004" green="0.96555169470000002" blue="0.53651366879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="xo4-ye-3xi"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -166,7 +169,7 @@
                                                         <constraint firstAttribute="height" constant="17" id="X2w-o2-bkt"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="hq7-sN-EcJ">
+                                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="hq7-sN-EcJ">
                                                     <rect key="frame" x="52" y="51" width="210" height="135"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="135" id="7uB-vm-q6r"/>
@@ -182,13 +185,13 @@
                                                 <constraint firstItem="zfJ-kF-Qkk" firstAttribute="leading" secondItem="EI2-Zt-yoh" secondAttribute="trailing" constant="8" id="J7P-wC-cQE"/>
                                                 <constraint firstItem="zfJ-kF-Qkk" firstAttribute="top" secondItem="WVg-8j-CLI" secondAttribute="bottom" constant="1" id="Lho-c0-RQB"/>
                                                 <constraint firstItem="2Ld-ul-FKb" firstAttribute="top" secondItem="3VT-nm-5KL" secondAttribute="topMargin" constant="3" id="bKz-hS-Gli"/>
+                                                <constraint firstAttribute="bottom" secondItem="hq7-sN-EcJ" secondAttribute="bottom" constant="15.5" id="eev-fp-nxy"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Gd6-tc-dz3" secondAttribute="trailing" id="g98-NP-pOm"/>
                                                 <constraint firstItem="hq7-sN-EcJ" firstAttribute="top" secondItem="zfJ-kF-Qkk" secondAttribute="bottom" constant="8" id="hH5-zY-8AW"/>
                                                 <constraint firstItem="Gd6-tc-dz3" firstAttribute="leading" secondItem="UMr-Xw-1ip" secondAttribute="trailing" constant="8.5" id="lNB-sD-LQn"/>
                                                 <constraint firstAttribute="topMargin" secondItem="EI2-Zt-yoh" secondAttribute="top" id="lfq-IT-yoW"/>
                                                 <constraint firstItem="WVg-8j-CLI" firstAttribute="leading" secondItem="EI2-Zt-yoh" secondAttribute="trailing" constant="8" id="nFf-o0-kwd"/>
                                                 <constraint firstItem="UMr-Xw-1ip" firstAttribute="top" secondItem="3VT-nm-5KL" secondAttribute="topMargin" constant="2" id="o2d-dP-Xce"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hq7-sN-EcJ" secondAttribute="bottom" constant="7.5" id="pmb-HE-dH1"/>
                                                 <constraint firstItem="UMr-Xw-1ip" firstAttribute="leading" secondItem="2Ld-ul-FKb" secondAttribute="trailing" constant="3" id="vkF-nR-yJ8"/>
                                                 <constraint firstItem="hq7-sN-EcJ" firstAttribute="leading" secondItem="EI2-Zt-yoh" secondAttribute="trailing" constant="8" id="yt8-FR-oSJ"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="EI2-Zt-yoh" secondAttribute="leading" id="yzz-mw-wpe"/>
@@ -246,7 +249,7 @@
                                 <rect key="frame" x="16" y="259" width="343" height="351"/>
                                 <color key="backgroundColor" red="0.97305113769999996" green="1" blue="0.95279167499999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TweetCell" rowHeight="202" id="u71-G2-xf0" customClass="TweetViewCell" customModule="PicFlow" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TweetViewCell" rowHeight="202" id="u71-G2-xf0" customClass="TweetViewCell" customModule="PicFlow" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="202"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u71-G2-xf0" id="IWD-QM-J1C">

@@ -13,7 +13,7 @@ class TwitterAPIService {
     
     static func requestTweets(forMobileTechnology technology: TechnologyType, getTweetsOn time: TweetTimeType = .none, startingOnTweetID id: String = "", success: @escaping (_ dictionary: [String : Any]) -> (), error: @escaping (_ error: Error) -> ()) {
         
-        guard let request = try? TwitterAPIRouter.getTweets(forTechnologyType: technology, getTweetsOn: time, startingOnTweetID: id).asURLRequest() else {
+        guard let request = try? TwitterAPIRouter.getTweets(forTechnologyType: technology, getTweetsOn: time, startingOnTweetID: "").asURLRequest() else {
             return
         }
         
