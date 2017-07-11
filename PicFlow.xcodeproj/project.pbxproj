@@ -191,11 +191,11 @@
 		9C4B91EE1F044E8B003BC488 /* PicFlow */ = {
 			isa = PBXGroup;
 			children = (
-				9C4B924C1F0E0D63003BC488 /* Components */,
 				9C4B91EF1F044E8B003BC488 /* AppDelegate.swift */,
 				9C4B92281F0854D1003BC488 /* GoogleService-Info.plist */,
-				9C4B92401F0B3D5F003BC488 /* Helpers */,
 				9C4B91FB1F044E8B003BC488 /* Info.plist */,
+				9C4B924C1F0E0D63003BC488 /* Components */,
+				9C4B92401F0B3D5F003BC488 /* Helpers */,
 				9C4B92251F082858003BC488 /* Models */,
 				9C4B92231F07084F003BC488 /* Resources */,
 				9C4B921E1F04546C003BC488 /* Social */,
@@ -559,7 +559,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
 		};
 		B93DB3D1FDE4E9EC634032B6 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
